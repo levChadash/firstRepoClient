@@ -1,0 +1,30 @@
+<p>report works!</p>
+<form id="form" [formGroup]="reportForm">
+<div class="reportDiv"> 
+  <!-- style="position: relative; text-align: center; margin-top: 20%;"  -->
+<mat-form-field appearance="fill">
+    <mat-label>הכנס את טווח התאריך של הדיווח</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="Start date" formControlName="sDate">
+      <input matEndDate placeholder="End date" formControlName="eDate">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <label for="tentacles">כמות פעמים</label>
+  
+
+<input type="number" id="tentacles" name="tentacles"
+       min="0" max="100" formControlName="numVisets">
+   
+    <label for="name">הערה:</label>
+
+    <textarea rows="5" cols="30" pInputTextarea formControlName="comment"></textarea>
+    
+          
+<br>
+<button type="submit" class="btn btn-black" (click)="save()">שמור</button>
+ 
+</div>
+</form>

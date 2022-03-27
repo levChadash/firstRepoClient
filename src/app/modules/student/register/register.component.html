@@ -1,0 +1,50 @@
+ <div class="mainDiv">
+<form id="form" [formGroup]="registerForm">
+ 
+<!-- סוג התנדבות -->
+<mat-form-field appearance="fill">
+  <mat-label>סוג התנדבות</mat-label>
+  <mat-select formControlName="volunteerTypeId"  required >
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let volunteerType of volunteerTypes" [value]="volunteerType.id">
+      {{volunteerType.type}}
+    </mat-option>
+  </mat-select>
+  </mat-form-field>
+
+<!-- שכונה -->
+<div class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Assignee</mat-label>
+    <input type="text" matInput formControlName="neihborhood"  [matAutocomplete]="auto"  required>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
+
+<!-- חברה -->
+<button mat-raised-button (click)="openDialog()">התנדבות עם זוג</button>
+  <ol>
+  <li *ngIf="friendid">
+    You chose: <i>{{friendid}}</i>
+  </li>
+</ol>
+
+<!-- הודעה -->
+<h5>הערה</h5>
+<textarea rows="5" cols="30" pInputTextarea formControlName="comment"></textarea> 
+
+
+
+<div class="example-button-row">
+
+  <button mat-raised-button color="save" (click)="save()" >שמירה</button>
+  <!-- [disabled]="isDisabled" -->
+</div>
+
+</form>
+ 
+</div>

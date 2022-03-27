@@ -1,0 +1,9 @@
+
+<app-volunteer-menu *ngIf="authorized"></app-volunteer-menu>
+<app-admin-menu *ngIf="authorizedAdmin"></app-admin-menu>
+
+
+
+<div [class.router]="authorized" [class.router]="authorizedAdmin" >
+  <router-outlet></router-outlet>
+</div>

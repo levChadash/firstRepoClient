@@ -1,0 +1,37 @@
+<!-- <form id="form" [formGroup]="logInForm" >
+
+    <input type="text" formControlName="idNumber" name="idNumber"/>
+    <input type="text" formControlName="password" name="password"/>
+    <button name="logInButton" (click)="logIn()">התחברות</button>
+</form>
+ -->
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <!------ Include the above in your HEAD tag ---------->
+ 
+ <div class="sidenav">
+          <div class="login-main-text">
+             <h2>Application<br> Login Page</h2>
+             <h1>לב חדש</h1>
+          </div>
+       </div>
+       <div class="main">
+          <div class="col-md-6 col-sm-12">
+             <div class="login-form">
+                <form id="form" [formGroup]="logInForm">
+                   <div class="form-group">
+                      <label>User Name</label>
+                      <input type="text" class="form-control" placeholder="User Name" formControlName="idNumber">
+                   </div>
+                   <div class="form-group">
+                      <label>Password</label>
+                      <input type="password" class="form-control" placeholder="Password" formControlName="password" style="background-color: brown;">
+                   </div>
+                   <button type="submit" class="btn btn-black" (click)="logIn()">Login</button>
+                   
+                </form>
+             </div>
+          </div>
+       </div>
+       

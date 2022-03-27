@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>עם מי את מעונינת להתנדב?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>מס זהות</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button (click)="check()" mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>
